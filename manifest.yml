@@ -1,0 +1,10 @@
+applications:
+- path: .
+  name: watson-assistant-with-laravel
+  memory: 128M
+  domain: eu-de.mybluemix.net
+  buildpack: https://github.com/motuo1201/php-buildpack
+env:
+    APP_DEBUG: false
+    CF_STAGING_TIMEOUT: 15
+    CF_STARTUP_TIMEOUT: 15

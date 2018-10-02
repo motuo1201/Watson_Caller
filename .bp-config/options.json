@@ -1,0 +1,6 @@
+{
+    "PHP_VERSION": "{PHP_70_LATEST}",
+    "COMPOSER_VENDOR_DIR": "htdocs/vendor",
+    "WEBDIR": "htdocs/public",
+    "PHP_EXTENSIONS": ["bz2", "pdo", "zlib", "curl", "mcrypt", "mbstring", "mysqli", "gd", "zip"]
+}

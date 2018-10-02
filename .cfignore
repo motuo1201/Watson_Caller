@@ -1,0 +1,6 @@
+composer.lock
+vendor
+node_modules
+htdocs/vendor/
+htdocs/vendor/
+htdocs/storage/logs/laravel.log

@@ -1,0 +1,66 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.1",
+        "laravel/framework": "5.5.*",
+        "guzzlehttp/guzzle": "^6.3",
+        "fideloper/proxy": "~3.3",
+        "laravel/tinker": "~1.0",
+        "ext-mysqli": "*",
+        "barryvdh/laravel-debugbar": "^3.2"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "htdocs/database"
+        ],
+        "psr-4": {
+            "App\\": "htdocs/app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php htdocs/artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "mkdir -p /tmp/app/htdocs/bootstrap/cache",
+            "mkdir -p /tmp/app/htdocs/storage/framework/sessions",
+            "mkdir -p /tmp/app/htdocs/storage/framework/views",
+            "mkdir -p /tmp/app/htdocs/storage/framework/cache",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php htdocs/artisan optimize",
+            "php htdocs/artisan key:generate"
+        ],
+        "post-update-cmd": [
+            "mkdir -p /tmp/app/htdocs/bootstrap/cache",
+            "mkdir -p /tmp/app/htdocs/storage/framework/sessions",
+            "mkdir -p /tmp/app/htdocs/storage/framework/views",
+            "mkdir -p /tmp/app/htdocs/storage/framework/cache",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "cp /tmp/app/htdocs/.env.example /tmp/app/htdocs/.env",
+            "php htdocs/artisan optimize",
+            "php htdocs/artisan key:generate"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

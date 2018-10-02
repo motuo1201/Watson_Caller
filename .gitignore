@@ -1,0 +1,12 @@
+/htdocs/node_modules
+/htdocs/public/hot
+/htdocs/public/storage
+/htdocs/storage/*.key
+/htdocs/vendor
+/htdocs/.idea
+/htdocs/.vagrant
+/htdocs/Homestead.json
+/htdocs/Homestead.yaml
+/htdocs/npm-debug.log
+/htdocs/yarn-error.log
+/htdocs/.env
