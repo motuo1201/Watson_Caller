@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\CallWatsonAssistant;
+use Illuminate\Support\Facades\Log;
 
 class WatsonCallController extends Controller
 {
@@ -15,6 +16,7 @@ class WatsonCallController extends Controller
      */
     public function index(Request $request)
     {
+        Log::info('TEST LOG');
         $request->session()->flush();
         return view("talkWatson");
     }
