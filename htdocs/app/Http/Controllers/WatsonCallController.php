@@ -16,7 +16,7 @@ class WatsonCallController extends Controller
      */
     public function index(Request $request)
     {
-        Log::info('TEST LOG');
+        Log::error('TEST LOG');
         $request->session()->flush();
         return view("talkWatson");
     }
