@@ -13,11 +13,15 @@ class CallWatsonAssistant{
      */
     public function call(string $spokenWord,array $context)
     {
-        if(count($context)>0){
-            $requestData  = json_encode(['input'=>['text'=>$spokenWord],'context'=>$context]);
-        }else{
-            $requestData  = json_encode(['input'=>['text'=>$spokenWord]]);
-        }
+        $context["private"] = ["my_credentials" => 
+            [
+                //ここは環境変数から取得
+                "user"     => config('watson.icf_user'),
+                "password" => config('watson.icf_password')
+            ]
+        ];
+
+        $requestData  = json_encode(['input'=>['text'=>$spokenWord],'context'=>$context]);
         $headers = ['Content-Type' => 'application/json','Content-Length' => strlen($requestData)];
         $curlOpts = [
             CURLOPT_USERPWD        => config('watson.user_name').':'.config('watson.password'),
