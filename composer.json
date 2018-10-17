@@ -55,7 +55,6 @@
             "mkdir -p /tmp/app/htdocs/storage/framework/views",
             "mkdir -p /tmp/app/htdocs/storage/framework/cache",
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "cp /tmp/app/htdocs/.env.example /tmp/app/htdocs/.env",
             "php htdocs/artisan optimize",
             "php htdocs/artisan key:generate"
         ]
