@@ -53,5 +53,6 @@ $app->singleton(
 */
 $app->configureMonologUsing(function($monolog){
     $monolog->pushHandler(new \Monolog\Handler\StreamHandler('php://stderr'));
+    $monolog->pushHandler(new \Monolog\Handler\StreamHandler('php://stdout'));
 });
 return $app;
